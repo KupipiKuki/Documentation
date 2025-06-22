@@ -33,7 +33,8 @@ image::Development/ModLoader/ActorMixins/Components.png[]
 == Adding Logic
 
 By default, Mixins allow you to implement additional code for the Begin Play, Construction Script, End Play, and Tick functions on the actor.
-Note that even though the editor labels these as overrides, they do not cancel the original function on the actor (TODO verify)
+Note that even though the Unreal editor labels these as overrides when creating them,
+they do not cancel the original function on the actor
 and are instead created as event notes.
 
 image::Development/ModLoader/ActorMixins/Functions.png[]
@@ -49,8 +50,8 @@ image::Development/ModLoader/ActorMixins/EnableTick.png[]
 
 == Adding Hooks
 
-Since Mixins are an extension of a Blueprint Hook asset,
-meaning you can open the Hook Graph window to define hooks.
+Since Mixins are extensions of Blueprint Hook assets,
+you can open the Hook Graph window to define hooks in a Mixin.
 These hooks always target the actor class you selected when creating the Mixin.
 
 image::Development/ModLoader/BlueprintHooks/ViewHookGraph.png[]

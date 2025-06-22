@@ -23,9 +23,16 @@ When prompted for the Mixin Target use the one from the "Actor Class" in your ol
 
 image::Development/UpdatingGuides/PickMixinTargetClass.png[Pick Mixin Target]
 
-From here you can add any logic you had in your old SCS Component into your new Mixin.
-Make sure to set any of the settings from your SCS hooks' actor component template(s) on the new component(s) you add to the Mixin,
-assuming your editor displays the template, as a now-irrelevant bug prevented the option from being presented in most circumstances.
+From here you have two options:
+
+1. Use the Mixin to attach your existing component to the actor.
+   In most cases this will be a drop-in replacement for your old SCS Hook,
+   but be aware that the mixin can spawn your component earlier in the loading sequence than the SCS Hook did in the past.
+   This is useful if you want to keep the logic in your existing component and just attach it to the actor.
+   Make sure to copy any of the settings from your SCS hooks' actor component template(s) to the ones you add via the Mixin,
+   assuming your editor even displays the template (a now-irrelevant bug prevented the option from being presented in most circumstances)
+2. Migrate the logic from the component your SCS Hook used to spawn into the Mixin.
+   Depending on the tasks you need to perform, a component may be unnecessary and you can just write the logic directly to the Mixin.
 
 [WARNING]
 ====
