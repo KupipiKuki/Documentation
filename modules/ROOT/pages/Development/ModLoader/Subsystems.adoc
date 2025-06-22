@@ -38,7 +38,8 @@ be sure to call the super functions, or the subsystem will not be handled correc
 Subsystems can be a convenient place to implement hybrid Blueprint and {cpp} functionality
 since they can be easily retrieved from anywhere with world context.
 To do this, define your subsystem in {cpp} with `UCLASS(Abstract, Blueprintable)`
-then create a Blueprint child class in the editor.
+then create a Blueprint child of that class in the Unreal editor.
+Name the blueprint class `BP_YourCppSubsystemName` to follow the convention used by the base game.
 Only the blueprint child class should be listed in the `Mod Subsystems` array of a Game World Module.
 
 The following UFUNCTION specifiers are useful for hybrid subsystems:
