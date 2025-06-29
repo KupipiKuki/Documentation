@@ -125,6 +125,12 @@ Create a Mod Game Instance Module if you don't already have one and add your new
 
 image::Development/ModLoader/BlueprintHooks/RegisterHook.png[Register Hook in Game Instance Module]
 
+== Troubleshooting
+
+If your hooks aren't triggering as expected,
+check your logs for messages in the `LogBlueprintHookingCodeGen` and `LogBlueprintHookManager` categories.
+A failure to attach a hook will produce a message and usually also the blueprint bytecode.
+
 == Limitations and Workarounds
 
 === Event Graph Nodes
