@@ -64,6 +64,11 @@ Fill out the drop-downs to specify what class's function you are hooking.
 
 image::Development/ModLoader/BlueprintHooks/FillDropdowns.png[Fill dropdowns]
 
+The editor Details pane allows
+switching between Insertion hook types
+and applying an inline Target Selector (called Target Selection Mode) for convenience.
+Compile the hook asset to visually apply any changes made to hook type.
+
 === Target Specifiers
 
 Target Specifier nodes connect to the "Target Statement" pin on hook nodes.
