@@ -26,6 +26,8 @@ As such, you should extract the folder somewhere convenient so that you can find
     ** Windows sometimes automatically cleans up this folder depending on your system settings, deleting your files.
 * ❌ Cloud-synced folder
     ** Cloud sync services like Dropbox, Google Drive, and OneDrive can corrupt your project files.
+* ❌ Windows Desktop
+    ** Some cloud sync services will automatically sync your Desktop without telling you about it.
 * ❌ Documents folder
     ** Some cloud sync services will automatically sync your Documents folder without telling you about it.
 * ❌ Nested within many folders
