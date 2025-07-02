@@ -65,6 +65,15 @@ Create a Mod Game Instance Module if you don't already have one and add your new
 
 image::Development/ModLoader/ActorMixins/RegisterMixin.png[Register Mixin to Game Instance Module]
 
+== Referencing Mixins and their Targets
+
+When writing blueprint code in a Mixin, the `Self` node refers to the mixin object as opposed to the actor it is targeting.
+To get a reference to the target actor instead, use the `Mixin Target` node.
+
+When you have a reference to an actor and need a reference to a mixin applied to it,
+use the `GetActorMixin` node or `UBlueprintActorMixin::GetActorMixin` function.
+Be sure to check if the returned mixin object is not null (for example, by using `Is Valid`) before using it.
+
 == Limitations and Workarounds
 
 === Blueprint Actors Only
