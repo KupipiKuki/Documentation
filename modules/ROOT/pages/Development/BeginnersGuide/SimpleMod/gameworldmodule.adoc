@@ -195,25 +195,28 @@ By giving it a name that includes the mod reference,
 it becomes easier to identify in crash logs
 and helps you tell the modules of different mods apart in the editor.
 
-You will be able to register recipes and other content using this module.
-
 Next, double click on the module to open up its blueprint settings.
 
 To make sure that SML automatically detects and loads our module,
-we must be sure to mark that it is the Root Module via the `Root Module` details field.
+mark it as the Root Module via the `Root Module` checkbox in the Details pane.
 
 image:BeginnersGuide/simpleMod/MakeRootModule.png[Make Root Module]
 
 [WARNING]
 ====
-Make sure that you mark your new Module as the Root via the blueprint details field!
-There can be one Root module per type (Instance, GameWorld, MenuWorld).
-If you don't do this, the module will be silently ignored,
-and the content you create later won't be loaded.
-This mistake won't be apparent until you have some content to test later.
+Make sure to mark your new Module as the Root Module!
+Most content not referenced by a module (or the Content Registration API)
+will be inaccessible and silently ignored by the game.
+
+To assist with catching this mistake,
+the editor performs data validation when you save Mod Modules.
+If you exceed more than one Root module per type (Instance, GameWorld, MenuWorld),
+or have modules of a type but none are marked as Root,
+the module will **fail data validation** and cause an error in the editor
+informing you of what you need to change.
 ====
 
-If you'd like to learn more about root modules, you can read about it on the
+If you'd like to learn more about root modules, you can read about them on the
 xref:Development/ModLoader/ModModules.adoc[Mod Modules] system page.
 
 == Compile and Save
