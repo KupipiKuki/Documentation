@@ -35,11 +35,19 @@ You can learn more about how holograms work on the xref:Development/Satisfactory
 ====
 
 As you can see in the `Components` pane in the top left, the actor already contains a few components.
-But not any visuals, so, now add a new FGColoredInstancedMeshProxy component in the center of the viewport.
-The build gun uses the origin when targeting the mesh to be built or snapped.
-You can use link:{attachmentsdir}/BeginnersGuide/simpleMod/Mesh_DocBuild.fbx[this example Mesh], the Plantpot of Knowledge, for your buildable.
+These are inherited from the parent class `FGBuildable`.
 
-This Actor is also where you can define the snapping area and the clearance area, but we won't do that for now. Look to other machines and examples for inspiration as there are several relevant settings to make those behaviors work correctly.
+Note that the building does not currently have any visuals.
+To fix this, add a new `FGColoredInstancedMeshProxy` component in the center of the viewport.
+This component is an optimized version of the base Unreal static mesh component that supports Satisfactory's Customizer painting system.
+To tell it what mesh to display, assign one in the "Static Mesh" field of the component's Details panel.
+Import link:{attachmentsdir}/BeginnersGuide/simpleMod/Mesh_DocBuild.fbx[this example Mesh], the Plantpot of Knowledge,
+which we'll use for this building.
+Use the default import settings when prompted.
+
+The build gun uses the origin when targeting the mesh to be built or snapped.
+This Actor is also where you can define the snapping area and the clearance area (mClearanceData), but we won't do that for now.
+Look to other machines and examples for inspiration as there are several relevant settings to make those behaviors work correctly.
 
 == Make it Paintable
 
