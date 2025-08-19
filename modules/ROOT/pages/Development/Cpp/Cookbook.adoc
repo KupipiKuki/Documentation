@@ -111,3 +111,7 @@ https://dev.epicgames.com/community/learning/tutorials/2lZj/unreal-engine-creati
 
 https://forums.unrealengine.com/t/how-to-create-k2node-that-appears-as-multiple-node-entries-per-every-component-property-within-blueprint/770002
 
+== Custom Cpp Struct Equality Operator
+
+https://forums.unrealengine.com/t/creating-a-custom-equality-operator-between-structures/151127
+https://forums.unrealengine.com/t/creating-a-custom-equality-operator-between-structures/151127

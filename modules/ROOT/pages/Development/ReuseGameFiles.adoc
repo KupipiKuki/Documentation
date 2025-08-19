@@ -34,12 +34,22 @@ As an example, let's say you wanted to reuse the static mesh and icon from the
 https://satisfactory.wiki.gg/HUB_Parts[HUB Parts]
 component mentioned earlier.
 
-The first step is to track down the location of the asset in the base game.
-This is done by figuring out the Blueprint Path of the asset via the
-https://satisfactory.wiki.gg/[Satisfactory Wiki],
-searching around for it in xref:Development/ExtractGameFiles.adoc#FModel[FModel]
-(the case for most GUI elements),
-or using a mod like https://ficsit.app/mod/ContentInspector[Content Inspector].
+=== Finding the Assets
+
+The first step is to track down the location - the Blueprint Path - of those asset in the base game's files.
+The game's assets are not named or organized predictably,
+so it's often easier to start with another (easier to locate) asset that references the content you want,
+then look at its properties.
+For example, we don't know what the blueprint path of HUB Parts' icon or mesh is,
+but we do know that the HUB Parts item must be referencing them somehow to use them.
+
+There are multiple ways to track down content, including:
+
+- For items, recipes, and some actors, use https://ficsit.app/mod/TFIT[TFIT's debugging features], which can display recipe and item paths.
+- For schematics, use https://ficsit.app/mod/MAMTips[MAM Enhancer's debug mode], which displays schematic paths
+- For arbitrary content (images used in machine UIs, particle systems, sounds), browse with xref:Development/ExtractGameFiles.adoc#FModel[FModel]
+or https://ficsit.app/mod/ContentInspector[Content Inspector].
+- The https://satisfactory.wiki.gg/[Satisfactory Wiki] has manually entered blueprint paths for some items.
 
 .HUB Parts on the Satisfactory Wiki
 image::ReuseContent/WikiHubPartsBox.png[HUB Parts on the Satisfactory Wiki]
@@ -53,7 +63,7 @@ so we should go to
 `\FactoryGame\Resource\Parts\HUBParts`
 in FModel to find the relevant files.
 
-.HUB Parts inside of the FModel Folders browser
+.HUB Parts inside of the FModel "Folders" browser
 image::ReuseContent/FModelFoundPath.png[HUB Parts inside of FModel]
 
 Upon switching to the Packages tab we can see
@@ -69,6 +79,8 @@ Use the Commands button in the top left of the viewer to see navigation keybinds
 .HUB Parts in the FModel 3D Viewer
 image::ReuseContent/FModelHubParts.png[HUB Parts in the FModel 3D Viewer]
 
+=== Creating the Placeholders
+
 Now that you've found the location of the asset in the base game,
 you're ready to set up the placeholder for it. Within your editor,
 you should go to the same path that you followed in FModel, creating
@@ -82,9 +94,9 @@ and a Texture called `IconDesc_HubParts_256` at the path
 
 [TIP]
 ====
-Notice that the actual content you use for the content you are
+Notice that the content of the asset you are
 creating a placeholder for _does not matter at all_ - just that it
-has the correct name, path, and asset type as the content you want to reference.
+has the same name, path, and asset type as the content you want to reference.
 ====
 
 [TIP]
@@ -108,13 +120,16 @@ from the
 xref:Development/BeginnersGuide/SimpleMod/recipe.adoc[Recipe/Schematic tutorial],
 which you can copy in from the ExampleMod in your project or download it again from the above link.
 
-image:ReuseContent/PlaceholderMesh.png[Final Placeholder Mesh]
-image:ReuseContent/PlaceholderIcon.png[Final Placeholder Icon]
+image::ReuseContent/PlaceholderMesh.png[Final Placeholder Mesh]
+image::ReuseContent/PlaceholderIcon.png[Final Placeholder Icon]
 
-Note that these screenshots also contain placeholders
+[NOTE]
+====
+These screenshots also contain placeholders
 of some other files related to the HUB Parts.
 You do not need to have placeholders for everything,
 just the content you want to reference.
+====
 
 Once these placeholder assets are created,
 you can refer to them from elsewhere in your mod project.
