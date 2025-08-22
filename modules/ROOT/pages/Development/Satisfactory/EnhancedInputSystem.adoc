@@ -190,13 +190,23 @@ UMyModGameInstanceModule* MyModGameInstanceModule = Cast<UMyModGameInstanceModul
 EnhancedInputComponent->BindAction(MyModGameInstanceModule->InputActionTagBindings[FGameplayTag::RequestGameplayTag(TEXT("Tag.Name"))], ETriggerEvent::Triggered, this, &Class::Function);
 ```
 
-== Reading Input Action Information
+== Displaying Information about Input Actions
 
 In order to retrieve the name(s) of the key(s) bound to an action for display to the user,
 call the FGInputLibrary function `Get Input Action Name as Text`
 on a Player Controller instance passing in the Name given to the action in its Mapping Context.
 This will automatically handle multi-key binds and display them in a combined format like `Left Alt + Q`.
 Note that if the mapping context is not registered at call time you will get back `UNKNOWN_KEY()`.
+
+The "Get Key Name For Action Simple" function may also be useful.
+Supply it with the player-mappable key settings Name of the action
+and it will return a text representation of the action.
+For example, given `PlayerActions_Use`, it will return `E` (by default).
+
+For buildables, the output of the "Get Look At Description" function
+will be rendered as rich text by the base game.
+To get the "orange box" around the keybind, use rich text formatting hints like this:
+`Press <Key>{KeyName}</> to {ActionDescription}`.
 
 If you need to retrieve the exact key structures involved in an input action,
 call the FGInputLibrary function `Get Current Mapping for Action`
