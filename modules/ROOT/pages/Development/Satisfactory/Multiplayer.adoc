@@ -2,6 +2,8 @@
 
 Although not all mods need special code to handle multiplayer,
 it's important to create your mods with multiplayer in mind.
+Mods coded properly for multiplayer will also work in singleplayer -
+no additional code paths are required specifically for singleplayer.
 
 Adding support for multiplayer to your mod is similar to creating multiplayer code for any other Unreal Engine project.
 
