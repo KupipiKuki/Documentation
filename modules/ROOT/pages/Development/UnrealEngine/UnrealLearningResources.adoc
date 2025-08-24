@@ -1,0 +1,92 @@
+= Unreal Learning Resources
+
+Although this documentation site covers many aspects of modding Satisfactory,
+there is a lot of core Unreal Engine knowledge that you must acquire on your own from other tutorials.
+This page contains a list of some of those other tutorials.
+
+Entries with a 📖 are primarily written, 📽 have a video component, and ⭐ are the ones we find especially useful and informative.
+
+== Disclaimer: Satisfactory Could Be Different
+
+Because Satisfactory is an established Unreal Engine game with its own systems,
+there are a lot of Unreal Engine systems you don't need to worry about
+Coffee Stain has already implemented them.
+
+Furthemore, some Unreal concepts do not carry over to Satisfactory because
+Coffee Stain has implemented their own systems instead.
+The most obvious example of this are machines and the lightweight buildable system -
+any buildings you create should use the optimized systems provided by Coffee Stain
+wherever possible instead of trying to implement your own.
+
+Some tutorials can't be followed in the Satisfactory Unreal project because
+they rely on Play-in-Editor (PIE) functionality that the project lacks code for.
+You'll have to install a separate copy of Unreal Engine 5 and create a separate project to follow those.
+
+Keep this in mind as you follow other tutorials.
+
+[id="UnrealEditor"]
+== Using the Unreal Editor
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-terminology?application_version=5.3[Unreal Engine Terminology] - 
+  A glossary of common Unreal Engine terms you may encounter in other tutorials.
+
+// keep below links in sync with Project Setup # Familiarize Yourself with the Editor
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-editor-interface?application_version=5.3[Unreal Editor Interface] -
+  Provides a high-level overview of what each of the editor panels do.
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/content-browser-in-unreal-engine?application_version=5.3[Content Browser] -
+  How to access the Content Browser, including adding multiple Content Browser panels to your viewport.
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/content-browser-interface-in-unreal-engine?application_version=5.3[Content Browser Interface] -
+  How to use the various features offered by the Content Browser.
+// end keep in sync
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/reference-viewer-in-unreal-engine?application_version=5.3[Reference Viewer] -
+  Using the Reference Viewer to see what assets reference a given asset, and what other assets are referenced by it.
+
+* 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/property-matrix-in-unreal-engine?application_version=5.3[Property Matrix] -
+  Quickly viewing or editing the properties of multiple assets at once using the Property Matrix.
+
+* 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/global-asset-picker-in-unreal-engine?application_version=5.3[Global Asset Picker] -
+  Quickly opening an asset you already know the name of using the Global Asset Picker.
+
+[id="UnrealBlueprint"]
+== Blueprint Scripting
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/introduction-to-blueprints-visual-scripting-in-unreal-engine?application_version=5.3[Introduction to Blueprints] -
+  A high-level overview of what Blueprints are and what they can do.
+  Links to other pages with more information about specific features.
+
+    ** 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/basic-scripting-with-blueprints-in-unreal-engine?application_version=5.3[Basic Scripting with Blueprints] -
+        Brief introduction to blueprint variables and event graphs
+
+    ** 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/overview-of-blueprints-visual-scripting-in-unreal-engine?application_version=5.3[Blueprints Visual Scripting Overview] -
+        Breaks down the anatomy of a Blueprint and the different types of Blueprints available.
+
+* ⭐📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/blueprint-tutorials-in-unreal-engine?application_version=5.3[Blueprint Tutorials] -
+  Links to walkthroughs of accomplishing various tasks in the Blueprint scripting editor.
+  Note that the page currently duplicates all available tutorials in each complexity heading.
+
+* 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/searching-in-blueprints-in-unreal-engine?application_version=5.3[Blueprint Search]
+  How to use the Blueprint editor's search functionality.
+
+* 📖 https://dev.epicgames.com/documentation/en-us/unreal-engine/graphs-in-unreal-engine?application_version=5.3[Anatomy of a Blueprint : Graphs] -
+  Overview of the different kinds of blueprint graphs with links to additional information.
+
+[id="UnrealCpp"]
+== Unreal {cpp} 
+
+* ⭐📖📽 https://www.youtube.com/watch?v=VMZftEVDuCE[Blueprints vs. C++: How They Fit Together and Why You Should Use Both]- 
+  Excellent overview of how a project using both Blueprints and {cpp} can best leverage the strengths of both.
+* 📽 https://www.youtube.com/watch?v=IaU2Hue-ApI[The Unreal Engine Game Framework: From int main() to BeginPlay] -
+  A high-level tour of what Unreal is doing under the hood when you run a game.
+
+[id="General"]
+== General
+
+// cspell:ignore Sensei
+* 📽 https://www.youtube.com/watch?v=k-zMkzmduqI[Unreal Sensei: Unreal Engine 5 Beginner Tutorial - UE5 Starter Course] -
+  A walkthrough of creating an Unreal landscape level from scratch.
+  Note that this tutorial will cover a lot of concepts and systems that Satisfactory already does for you.
+* 📖📽 https://dev.epicgames.com/community/unreal-engine/learning[Learn Unreal Engine Portal] - 
+  Collection of learning resources created by Epic Games and the Unreal developer community.

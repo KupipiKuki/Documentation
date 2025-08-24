@@ -39,7 +39,7 @@ because there is an Iron Rod placeholder asset present in the Starter Project.
 
 The placeholder generator makes a best effort to fill in fields with the correct values,
 but it's not always possible to do so,
-or the content is purposefully excluded.
+and some content is purposefully excluded.
 For example, recipe ingredients and quantities will be present,
 but models and textures are intentionally replaced with blanks.
 You could open up the placeholders to look at them in the editor,
@@ -93,7 +93,9 @@ On disk, they can be found in the `Source/` folder.
 These don't appear in the Content Browser unless you have "Show {cpp} Classes" enabled in your content browser settings.
 
 These are **header files** (.h) and **auto-generated {cpp} stubs** (.cpp).
-Similar to the Content placeholders, they are automatically generated skeleton versions of the files in the correct locations.
+The header files are provided by Coffee Stain in the `CommunityResources/` folder of the game installation,
+but the {cpp} files, similar to the Content placeholders,
+are automatically generated skeletons of the files in the correct locations.
 
 These files are required for the editor to offer the correct game assets and classes for you to reference in your mods.
 Code in these files is executed by the editor in some circumstances,

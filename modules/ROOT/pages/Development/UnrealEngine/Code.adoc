@@ -1,5 +1,11 @@
 = Code & Content
 
+[WARNING]
+====
+This docs page has not been edited for a long time and may contain outdated information.
+Consider following some of the tutorials listed on the xref:Development/UnrealEngine/UnrealLearningResources.adoc[Unreal Learning Resources page] instead.
+====
+
 In Unreal we have generally two types of codes and one type of content.
 
 == Content

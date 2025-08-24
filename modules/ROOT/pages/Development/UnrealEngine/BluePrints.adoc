@@ -1,5 +1,11 @@
 = Blueprints
 
+[WARNING]
+====
+This docs page has not been edited for a long time and may contain outdated information.
+Consider following some of the tutorials listed on the xref:Development/UnrealEngine/UnrealLearningResources.adoc[Unreal Learning Resources page] instead.
+====
+
 The `+Blueprint+` system is a node-based visual coding language for
 Unreal. Blueprints compile into a variant of bytecode which gets
 executed by the Unreal Blueprint Virtual Machine.

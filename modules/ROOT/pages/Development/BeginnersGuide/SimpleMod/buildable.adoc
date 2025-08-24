@@ -124,7 +124,8 @@ That's it! You don't need to register anything else. When the recipe gets loaded
 
 == Trying it Out
 
-If you load up the game now, you should be able to build the Doc Build in game, but it is purely an object that sits there and exists. You should be able to paint it with the paint tool, and it should look roughly like it does in the icon image.
+If you load up the game now, you should be able to build the Doc Build in game.
+You should be able to paint it with the paint tool, and it should look roughly like it does in the icon image.
 
 == Troubleshooting
 

@@ -3,6 +3,14 @@
 Let's create a simple interaction GUI for our xref:Development/BeginnersGuide/SimpleMod/machines/SimpleMachine.adoc[Item Counter Machine].
 We'll use it to read the current data and to reset the counters.
 
+[WARNING]
+====
+This tutorial assumes you have a basic understanding of Unreal Engine's Blueprint editor interface and Blueprint scripting system.
+
+If you are unfamiliar with this system, please check out the resources linked in the
+xref:Development/UnrealEngine/UnrealLearningResources.adoc#UnrealBlueprint[Unreal Learning Resources section: "Blueprint Scripting"]
+====
+
 [TIP]
 =====
 A completed version of this interaction GUI is included in the ExampleMod in the starter project.
@@ -26,7 +34,7 @@ This guide focuses on the Satisfactory Modding specific portions of creating a w
 
 Check out the following documentation from Unreal as a starting point for learning how to design widgets.
 
-* https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-ui-designer-quick-start-guide-in-unreal-engine#2-displayinghealth,energy&ammo[UMG UI Designer Quick Start Guide: 2 - Displaying Health, Energy & Ammo]
+* https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-ui-designer-quick-start-guide-in-unreal-engine?application_version=5.3#2-displayinghealth,energy&ammo[UMG UI Designer Quick Start Guide: 2 - Displaying Health, Energy & Ammo]
 * https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-editor-reference-for-unreal-engine?application_version=5.3[UMG Editor Reference]
 
 == Retrieving Information from our Machine

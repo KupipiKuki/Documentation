@@ -2,6 +2,14 @@
 
 In this chapter we'll create a machine which simply counts the items and types of items that pass through it, outputting them again on the other side. 
 
+[WARNING]
+====
+This tutorial assumes you have a basic understanding of Unreal Engine's Blueprint editor interface and Blueprint scripting system.
+
+If you are unfamiliar with this system, please check out the resources linked in the
+xref:Development/UnrealEngine/UnrealLearningResources.adoc#UnrealBlueprint[Unreal Learning Resources section: "Blueprint Scripting"]
+====
+
 [TIP]
 =====
 A completed version of this machine is included in the ExampleMod in the starter project.
@@ -53,9 +61,8 @@ There is not that much we need to do here.
 The only thing we need to do is to set the PowerInfo on the PowerConnection and configure the target consumption of the `FGPowerInfo` to something like 1.0.
 This controls how much power in MW the building will use to operate.
 
-image:BeginnersGuide/simpleMod/machines/SimpleMachine_Init.jpg[image]
-
-(Logic in the Event Graph)
+.Logic in the Event Graph
+image::BeginnersGuide/simpleMod/machines/SimpleMachine_Init.jpg[image]
 
 == Grab Logic
 

@@ -3,6 +3,14 @@
 In this chapter we will create a simple custom power generator -
 a Solar Panel that only produces energy during the daytime.
 
+[WARNING]
+====
+This tutorial assumes you have a basic understanding of Unreal Engine's Blueprint editor interface and Blueprint scripting system.
+
+If you are unfamiliar with this system, please check out the resources linked in the
+xref:Development/UnrealEngine/UnrealLearningResources.adoc#UnrealBlueprint[Unreal Learning Resources section: "Blueprint Scripting"]
+====
+
 == Create the Buildable
 
 As in previous examples, we need to create another xref:Development/BeginnersGuide/SimpleMod/buildable.adoc[buildable] (let's name it `Build_DocSolarPanel`) with a mesh, descriptor, recipe, and to add that recipe to our schematic.

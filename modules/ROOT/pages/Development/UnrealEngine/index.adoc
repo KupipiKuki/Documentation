@@ -3,16 +3,9 @@
 Satisfactory uses a customized version of Unreal Engine (UE) 5.3.2 by Epic Games as its game engine.
 UE provides a solid framework for developing fast executing native code and a interface for artists to use a more easy way for creating content.
 
-In this section we go over some minor basics you should know.
+The modding documentation does not replace the https://docs.unrealengine.com/[Unreal Engine Documentation].
+Although this section is titled "Unreal Engine",
+it only aims to cover Unreal concepts that are especially relevant to modding Satisfactory
+or must be done differently due to modding/Satisfactory intricacies.
 
-[WARNING]
-====
-This does not replace the https://docs.unrealengine.com/[Unreal Engine Documentation].
-
-Even if we make mods and not a standalone game, most of the stuff you will need to use is not stuff from Satisfactory, it will be actually from the Unreal Engine. That means, we highly recommend you to go through some Unreal Engine tutorials and try to make such a tutorial game.
-Because the process creating the content is nearly the same!
-
-Most of your answerers will be answered there! This documentation here, is rly just for the stuff about modding, the modloader and Satisfactory itself.
-
-For getting started with Unreal Engine we also recommend the https://academy.unrealengine.com/[Unreal Academy].
-====
+Consider following some of the tutorials listed on the xref:Development/UnrealEngine/UnrealLearningResources.adoc[Unreal Learning Resources page] instead.

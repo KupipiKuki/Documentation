@@ -403,12 +403,14 @@ the Unreal Engine editor through various other tutorials.
 
 We suggest the following resources:
 
-- https://docs.unrealengine.com/5.3/en-US/unreal-editor-interface/[Unreal Editor Interface] -
+// keep in sync with UnrealLearningResources.adoc#UnrealEditor
+- https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-editor-interface?application_version=5.3[Unreal Editor Interface] -
 Provides a high-level overview of what each of the editor panels do.
-- https://docs.unrealengine.com/5.3/en-US/content-browser-in-unreal-engine/[Content Browser] -
+- https://dev.epicgames.com/documentation/en-us/unreal-engine/content-browser-in-unreal-engine?application_version=5.3[Content Browser] -
 How to access the Content Browser, including adding multiple Content Browser panels to your viewport.
-- https://docs.unrealengine.com/5.3/en-US/content-browser-interface-in-unreal-engine/[Content Browser Interface] -
+- https://dev.epicgames.com/documentation/en-us/unreal-engine/content-browser-interface-in-unreal-engine?application_version=5.3[Content Browser Interface] -
 How to use the various features offered by the Content Browser.
+// end keep in sync
 
 == (Optional) Modify Editor Color Scheme
 
