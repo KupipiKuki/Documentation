@@ -53,18 +53,8 @@ Regardless of the option you chose,
 consider reading the link:#CreateCppMod_Manual[Creating the Mod-Module From Scratch] section
 to get a better understanding of the purpose of the files involved in a {cpp} mod.
 
-[id="CreateCppMod_AlpakitTemplate"]
-=== Option 1: Using the Alpakit Template
-
-The Alpakit Create Mod wizard can automatically create a blank {cpp} mod for you.
-You can learn more about the wizard on the
-xref:Development/BeginnersGuide/SimpleMod/gameworldmodule.adoc#_unreal_plugin_creation[Plugin Setup and Game World Module] page.
-Select the "{cpp} and Blueprint" template.
-
-After using the wizard, advance to the link:#AddClass[Adding New Classes] section of this page.
-
 [id="CreateCppMod_AlpakitConvert"]
-=== Option 2: Alpakit "Convert to C++ & Blueprint Mod" on Existing Blueprint Mod
+=== Option 1: Alpakit "Convert to C++ & Blueprint Mod" on an Existing Blueprint Mod
 
 If you already have an existing blueprint mod that you'd like to add {cpp} to,
 open the Alpakit Edit Mod dialog for the mod from the Alpakit Dev window and click the "Convert to C++ & Blueprint Mod" button.
@@ -74,7 +64,17 @@ After using the button, close the editor,
 xref:Development/BeginnersGuide/project_setup.adoc#_generate_visual_studio_files[regenerate Visual Studio project files],
 and build for the Development Editor target so your mod's new {cpp} module is recognized by the editor.
 
-Next, advance to the link:#AddClass[Adding New Classes] section of this page.
+Next, advance to the link:#Compile[Compiling] section of this page.
+
+[id="CreateCppMod_AlpakitTemplate"]
+=== Option 2: Using the Alpakit Template
+
+The Alpakit Create Mod wizard can automatically create a blank {cpp} and Blueprint mod for you.
+You can learn more about the wizard on the
+xref:Development/BeginnersGuide/SimpleMod/gameworldmodule.adoc#_unreal_plugin_creation[Plugin Setup and Game World Module] page.
+Select the "{cpp} and Blueprint" template.
+
+After using the wizard, advance to the link:#Compile[Compiling] section of this page.
 
 [id="CreateCppMod_Manual"]
 === Option 3: Creating the Mod-Module From Scratch
