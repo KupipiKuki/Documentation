@@ -99,7 +99,7 @@ Make sure to replace all instances of `PLUGIN_NAME` with your actual mod referen
 
 [WARNING]
 ====
-Note that the file we just created is a C# file (.cs) and not a C++ file (.cpp).
+Note that the file we just created is a C# file (.cs) and not a {cpp} file (.cpp).
 ====
 
 This configuration will add the basic Unreal Engine framework,
@@ -146,7 +146,7 @@ void FYourModReferenceModule::StartupModule() {
 IMPLEMENT_GAME_MODULE(FYourModReferenceModule, YourModReference);
 ----
 
-=== Adding the Module to the UPlugin
+==== Adding the Module to the UPlugin
 
 Next we need to tell the Unreal Editor to use our editor module.
 For this open up the `YourModReference.uplugin` file in your plugin root.
@@ -164,12 +164,44 @@ Like this:
 ----
 (the name used was `YourModReference`, make sure you use your own mod reference instead)
 
-=== Finishing Up
+==== Finishing Up
 
 Now that you have added your module folder, configuration, source, and added it to the targets,
 you will need to regenerate your Visual Studio project files. Directions on how to do this can be found xref:Development/BeginnersGuide/project_setup.adoc#_generate_visual_studio_files[here].
 
 After this process completes, you should be able to start working on the {cpp} code for your mod.
+
+[id="Compile"]
+== Compiling
+
+Whenever you make changes to the class structure of your code
+you will need to recompile the Unreal Editor before you can open it again.
+Do this by building the `Development Editor` `Win64` target of the `FactoryGame` project
+with the editor closed.
+
+Using Alpakit Dev or Alpakit Release from the Unreal editor
+will automatically build other targets as needed,
+so you don't need to worry about building them yourself
+unless the builds are failing and you want more specific details.
+
+To build for specific targets from Visual Studio, see the table below:
+
+.Manual Build Quick Reference
+|===
+| To build for X, use... |Solution Configuration|Solution Platform|Project
+
+| Unreal Editor (Windows)
+| Development Editor | Win64 | FactoryGame
+
+| Windows Client
+| Shipping | Win64 | FactoryGameSteam/FactoryGameEGS
+
+| Windows Dedicated Server
+| Shipping Server | Win64 | FactoryGame
+
+| Linux Dedicated Server
+| Shipping Server | Linux | FactoryGame
+|===
 
 [id="AddClass"]
 == Adding New Classes

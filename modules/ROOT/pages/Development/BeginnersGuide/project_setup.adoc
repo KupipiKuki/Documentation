@@ -257,9 +257,8 @@ you must close the Editor and rebuild `Development Editor`
 from Visual Studio for the changes to take effect.
 
 Alpakit (a tool discussed later) will take care of building Shipping for you when required later,
-but you can still build it from Visual Studio if you want to.
-To build shipping from Visual Studio,
-use the `Shipping` configuration and build the `FactoryGameSteam` or `FactoryGameEGS` project instead of `FactoryGame`.
+but it's still possible to manually build them from Visual Studio.
+More information can be found on the xref:Development/Cpp/setup.adoc#Compile[{cpp} Modding Setup] page.
 ====
 
 [id='Compiling_Troubleshooting']
