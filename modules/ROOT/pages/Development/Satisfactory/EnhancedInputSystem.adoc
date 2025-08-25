@@ -206,7 +206,8 @@ For example, given `PlayerActions_Use`, it will return `E` (by default).
 For buildables, the output of the "Get Look At Description" function
 will be rendered as rich text by the base game.
 To get the "orange box" around the keybind, use rich text formatting hints like this:
-`Press <Key>{KeyName}</> to {ActionDescription}`.
+// \{ required to escape AsciiDoc attribute processing
+`Press <Key>\{KeyName}</> to \{ActionDescription}`.
 
 If you need to retrieve the exact key structures involved in an input action,
 call the FGInputLibrary function `Get Current Mapping for Action`
