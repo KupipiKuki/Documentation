@@ -113,15 +113,21 @@ If you don't, you could get ambiguous errors while dumping and generating.
 ====
 
 A user interface exists for using the dumper,
-but there are some crashing problems with it,
+but there are many crash problems with it,
 so these directions will cover using the command line version instead.
 
-To dump assets, navigate to your game install directory in Powershell.
-For example, `C:\EpicGamesGames\SatisfactoryEarlyAccess`
+First, navigate to your game install directory in Powershell.
+Open Powershell and use the `cd` command to change directories.
+For example, if your game is installed at `C:{NoBreakBackslash}EpicGamesGames{NoBreakBackslash}SatisfactoryEarlyAccess`,
+you would run:
+
+`cd C:\EpicGamesGames\SatisfactoryEarlyAccess`
 
 Next, from that directory, edit the following Powershell command to point to your game executable, then run it:
 
-`FactoryGameEGS.exe -EpicPortal -NoSteamClient -DumpAllGameAssets -RootAssetPath=/Game -ExcludePackagePaths=/Game/WwiseAudio -ExcludePackageNames=/Game/Geometry/Meshes/1M_Cube_Chamfer -PackagesPerTick=32 -ExitOnFinish -log -NewConsole`
+// cspell:ignore norhithread
+// Prevent break on dash and its argument
+`FactoryGameEGS.exe -EpicPortal -NoSteamClient -DumpAllGameAssets -{wj}RootAssetPath=/Game -ExcludePackagePaths=/Game/WwiseAudio -ExcludePackageNames=/Game/Geometry/Meshes/1M_Cube_Chamfer -PackagesPerTick=32 -ExitOnFinish -log -NewConsole -nullrhi -norhithread`
 
 [WARNING]
 ====

@@ -10,3 +10,7 @@ asciidoc:
   attributes:
     # Uses zero-width joiner (U+200D) to avoid being split across lines
     cpp: C‍+‍+
+    # Use backslash without it escaping things in other situations
+    literal-backslash: \
+    # To keep paths from breaking across lines
+    NoBreakBackslash: ‍\‍
