@@ -9,6 +9,13 @@ This page will eventually walk through using an Icon Generator tool to create ic
 Until then, look at the xref:CommunityResources/IconGenerator.adoc[list of community created tools]
 and the tools' own documentation.
 
+== Useful Mods for Icon Capture
+
+You may also find the following mods useful in creating icons:
+
+- https://ficsit.app/mod/ChromaKey[Chroma Key] - "Green screen" buildables in a variety of colors, including one that supports customizer painting
+- https://ficsit.app/mod/Th3SMBuilder[Buildable Static Meshes] - Build any arbitrary static mesh as a standalone buildable
+
 == Information from Coffee Stain Studios
 
 // cspell:ignore Nathalie
