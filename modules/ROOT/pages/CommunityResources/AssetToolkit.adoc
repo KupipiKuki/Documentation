@@ -26,10 +26,10 @@ making working with base-game content much more convenient.
 [WARNING]
 ====
 If you decide to generate a complete copy of the project,
-make sure that your Content folder is not publicly available on Github or similar.
+make sure that your Content folder is not publicly available on GitHub or similar.
 
-If you only have a plugin-level repo, this is not a problem,
-but if you have a project-level repo as well, you should watch out for this.
+If you only have a plugin-level repo (root folder has a `.uplugin` file), this is not a problem,
+but if you have a project-level repo as well (root folder has a `.uproject` file), you should watch out for this.
 
 Because the assets are already tracked (shipped with the starter project),
 simply adding them to your `.gitignore` will not ensure they are excluded.
