@@ -54,6 +54,9 @@ Regardless, make sure the copy you obtain is of the **`dev` branch** as it will 
 Note that the link above points to the *dev branch of Mircea's fork* of the https://github.com/Archengius/UEAssetToolkit[original project].
 Said fork is the one that the https://github.com/satisfactorymodding/UnrealProjectUpdater/blob/master/.github/workflows/updateSML.yml#L176[CI scripts]
 use to semi-automatically generate the starter project, and as such is usually kept more up to date.
+
+Community changes to the Asset Toolkit are often slow to merge,
+so it's best to ask on the Discord to see if there is a more recent fork or branch available.
 ====
 
 Once you have downloaded the files,
@@ -346,6 +349,9 @@ because they are stored raw in the pak file (not the utoc/ucas) and the automati
 
 [TIP]
 ====
+There may be some files in the CustomAssets list that you don't have in your backup copy of the Starter Project.
+They were probably removed from the game and the CustomAssets list has not been updated to reflect this.
+
 Check the https://github.com/satisfactorymodding/UnrealProjectUpdater/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen[open pull requests]
 for the UnrealProjectUpdater repository to see if there are any additional CustomAssets that haven't been merged into the project's list yet.
 ====
