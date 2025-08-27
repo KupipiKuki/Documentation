@@ -8,7 +8,7 @@ Here you can find lots of information regarding modding
 https://www.satisfactorygame.com/[Satisfactory],
 the factory-building sim by https://www.coffeestainstudios.com/games/[Coffee Stain Studios] (CSS).
 Modding for Satisfactory is more established than you might think given how long the game has been out.
-There are already https://ficsit.app/[over 1100 mods] released
+There are already https://ficsit.app/[over 1200 mods] released
 and we maintain in-depth documentation on how you can create your own.
 
 In this page, we will provide some surface level information for both mod users and developers.
@@ -28,21 +28,24 @@ If you'd like to get started using mods, this section is for you.
 If this is your first time modding Satisfactory,
 check out the xref:ForUsers/Welcome.adoc[Welcome to the Community] guide to get started with mods quickly.
 
-=== Satisfactory Mod Repository [.title-ref]#(aka. SMR aka. ficsit.app aka. FICSIT Augmentation Database)#
+====
+xref:ForUsers/SatisfactoryModManager.adoc[View the "Welcome to the Community" guide ➡]
+====
+
+=== Satisfactory Mod Repository
 
 The Satisfactory Mod Repository (SMR) is the most extensive collection of mods made for Satisfactory.
 It's easy to upload a mod of your own or write a guide for other users.
 Uploaded content is tested for malware and such before it is approved for download.
 Visit https://ficsit.app/[ficsit.app] to see it for yourself!
 
-=== Satisfactory Mod Manager [.title-ref]#(aka. SMM)#
+=== Satisfactory Mod Manager
 
-The Satisfactory Mod Manager allows the end user to easily install mods, their dependencies, and the mod loader.
+The Satisfactory Mod Manager (SMM) makes it simple to install mods, their dependencies, and the mod loader.
 It connects to https://ficsit.app/[SMR], allowing for quick and easy installation of all mods.
 
 ====
-Learn how to install and use the mod manager on the
-xref:ForUsers/SatisfactoryModManager.adoc[Using the Mod Manager] page.
+xref:ForUsers/SatisfactoryModManager.adoc[Learn how to install and use the mod manager on the "Using the Mod Manager" page  ➡]
 ====
 
 We highly recommend using Satisfactory Mod Manager to install mods as it makes using mods that much easier.
@@ -54,18 +57,26 @@ directions for manual installation can be found xref:ManualInstallDirections.ado
 If you'd like to write a mod of your own, this section is for you.
 
 Satisfactory mods can be written in Unreal Blueprint or {cpp}.
-Some community created libraries also allow writing mods
-with JSON files xref:Development/BeginnersGuide/overwriting.adoc#_contentlib[(ContentLib)]
+Community created libraries also allow writing mods
+with JSON files xref:Development/BeginnersGuide/overwriting.adoc#_contentlib[(ContentLib)].
 // cspell:ignore tweakit
-or Lua xref:Development/BeginnersGuide/overwriting.adoc#_tweakit[(TweakIt)].
+// or Lua xref:Development/BeginnersGuide/overwriting.adoc#_tweakit[(TweakIt)].
 
 If you're looking to write your own mods, we suggest you start with
-making blueprint mods first rather than C++ mods.
+making Blueprint mods first rather than {cpp} mods.
 Check out the xref:Development/BeginnersGuide/index.adoc[Getting Started Guide]
 and consider picking up the `Aspiring Modder` role in the "Channels & Roles" section of our https://discord.ficsit.app[Discord].
 
+====
+xref:Development/BeginnersGuide/index.adoc[Get started developing Unreal Blueprint and {cpp} mods ➡]
+====
+
+====
+link:https://docs.ficsit.app/contentlib/latest/index.html[Get started developing basic mods with JSON text files and ContentLib ➡]
+====
+
 If you're looking to make models, it's best to learn how to put a mod together first.
-Once you've completed the `Buildable` step in `Beginners Guide`, then check out our xref:Development/Modeling/index.adoc[Modeling Guide].
+Once you've completed the "Buildable" page in the Getting Started guide, check out our xref:Development/Modeling/index.adoc[Modeling Guide].
 
 === Uploading Your Mod to SMR
 
