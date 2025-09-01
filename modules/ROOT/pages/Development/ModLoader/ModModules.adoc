@@ -65,6 +65,12 @@ You should only have _one of each type_ marked as the root module.
 Otherwise, SML will purposely crash the game to warn of this mistake.
 ====
 
+Although it is possible to have a root mod module defined purely in {cpp},
+it is recommenced to make a blueprint child of it root instead,
+as mod modules help you register asset-based content.
+To make a {cpp}-defined module a root module,
+set `bRootModule = true;` in its constructor.
+
 == Dispatch Lifecycle Event
 
 The `DispatchLifecycleEvent` is a function that every Mod Module can override.
