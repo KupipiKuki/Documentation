@@ -184,10 +184,12 @@ From there, use tag container methods like "Has Tag" and "Has All" to make decis
 [id="CheckTags_Cpp"]
 === In C++
 
+Use `UContentTagRegistry::Get()` to get a reference to the registry.
+
 Use `UContentTagRegistry:GetGameplayTagContainerFor` to get the tag container for a class.
 
 From there, use
-https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/GameplayTags/FGameplayTagContainer?application_version=5.3[tag container methods].
+https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/GameplayTags/FGameplayTagContainer?application_version=5.3#functions[tag container functions] to query for tags.
 
 == Using Tags from Other Mods
 

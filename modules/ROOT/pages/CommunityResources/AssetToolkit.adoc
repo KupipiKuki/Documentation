@@ -1,15 +1,5 @@
 = Unreal Engine Asset Toolkit
 
-[WARNING]
-====
-The Asset Toolkit has not yet been fully tested on UE5 or the 1.0 release.
-====
-
-[NOTE]
-====
-This article is a work-in-progress. Please contact us on the Discord if you run into any issues here.
-====
-
 Community member Archengius has created a set of two plugins
 useful for dumping content from a compiled Unreal Engine game and importing it into the Unreal Engine Editor.
 
@@ -44,14 +34,14 @@ for more info.
 The Asset Toolkit repository consists of two plugins,
 a dumper, to be installed in the game,
 and an asset generator, to be installed in the editor.
-Both are contained in the https://github.com/mircearoata/UEAssetToolkit/tree/dev[Asset Toolkit repository].
+Both are contained in the https://github.com/satisfactorymodding/UEAssetToolkit/tree/dev[Asset Toolkit repository].
 Download a zip of the repository and extract somewhere,
 or clone it if desired.
 Regardless, make sure the copy you obtain is of the **`dev` branch** as it will have the latest fixes.
 
 [NOTE]
 ====
-Note that the link above points to the *dev branch of Mircea's fork* of the https://github.com/Archengius/UEAssetToolkit[original project].
+Note that the link above points to the *dev branch of the Satisfactory Modding Org's fork* of the https://github.com/Archengius/UEAssetToolkit[original project].
 Said fork is the one that the https://github.com/satisfactorymodding/UnrealProjectUpdater/blob/master/.github/workflows/updateSML.yml#L176[CI scripts]
 use to semi-automatically generate the starter project, and as such is usually kept more up to date.
 
@@ -93,7 +83,8 @@ It takes files produced by the dumper and generates the uasset files your editor
 #include "MaterialEditingLibrary.h"
 ----
 - If you get errors about unresolved external modules, try deleting the project's `Intermediates` folder, regenerating project files, and building again.
-- Ask for help on the discord.
+- Ask on the Discord if there is a community fork that is more up to date.
+- Ask for help on the Discord.
 
 === Packaging the Asset Dumper as a Mod
 

@@ -60,15 +60,6 @@ meaning that A will be sorted before B.
 
 Use `TArray::StableSort` instead of this node when working in {cpp}.
 
-== Hooking
-
-[id="BindOnBPFunction"]
-=== BindOnBPFunction(const TSubclassOf<UObject> Class, FObjFunctionBind Binding, const FString FunctionName, bool HookOffsetStart)
-
-Allows binding an event to a function that is implemented in blueprint.
-
-HookOffsetStart controls if your event will be called before or after the hooked function. 
-
 == Config
 
 [WARNING]
