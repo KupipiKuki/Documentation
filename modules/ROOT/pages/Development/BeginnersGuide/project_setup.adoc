@@ -188,28 +188,60 @@ xref:CommunityResources/incredibuild.adoc[here].
 
 Open up the `FactoryGame.sln` file in your project folder.
 
-[TIP]
-====
+[id="vs_popups"]
+=== Popups and Notices
+
+You'll be presented with a few notices upon opening the solution for the first time.
+We'll go through each of these below, as some of them can safely be ignored,
+while others could break your install if you take the wrong action.
+
+[id="vs_popups_unsupported_projects"]
+==== Unsupported Projects
+
 Visual Studio may tell you "These projects are either not supported or need project behavior impacting modifications <...>"
 in a pop-up window upon opening the solution.
-It is safe to click "OK" on this message and dismiss it.
+
+**It is safe to click "OK" on this message and dismiss it.**
+
 Even though some of the components are outdated or out of support,
 they are the ones required by Satisfactory and Unreal and must be used.
-====
 
-[TIP]
-====
+[id="vs_popups_additional_components"]
+==== Additional Components
+
 Visual Studio may tell you "Based on your solution, you might need to install extra components for a full development experience" at the top of the Solution Explorer window.
-It is safe to ignore this message.
+
+**It is safe to ignore this message.**
+
 Alternatively, you can install the requested components to keep Visual Studio from complaining about this
 at the cost of additional disk space.
-====
 
-[TIP]
-====
+[id="vs_popups_package_vulnerabilities"]
+==== Packages with Vulnerabilities
+
 Visual Studio may tell you "This solution contains packages with vulnerabilities" at the top of the Solution Explorer window.
+
+**It is safe to ignore this message.**
+
 We must use these exact package versions to match what the game and engine are using, so they should not be updated.
-====
+
+[id="vs_popups_ue_integration_config"]
+==== Unreal Engine Integration Configuration
+
+An editor tab titled "Unreal Engine Integration Configuration" opens on startup by default.
+It assists with initial setup of tools installed with the 'Game Development with {cpp}' workload.
+
+**Uncheck the "Show on startup" checkbox at the top and close the tab.**
+Unfortunately some of the changes required to make the custom engine work are not compatible with these tools.
+Do NOT set up the "Visual Studio Integration Tool" or "Unreal Engine Test Adapter",
+as they will make changes to the project and engine that break your ability to compile the editor and/or package mods.
+
+If you accidentally enable one of these,
+redownload the starter project and reinstall the engine on top of your existing install to repair it.
+
+image:BeginnersGuide/CloseIntegrationConfig.png[Uncheck "Show on startup" and close the "Unreal Engine Integration Configuration" tab]
+
+=== Building the Solution
 
 Once Visual Studio loads,
 you should see a folder tree in the Solution Explorer containing entries for
@@ -268,7 +300,7 @@ More information can be found on the xref:Development/Cpp/setup.adoc#Compile[{cp
 ====
 
 [id='Compiling_Troubleshooting']
-=== Troubleshooting
+=== Build Troubleshooting
 
 Almost all warnings, and occasionally some errors, reported by the editor can be safely ignored during the build process.
 This section will help you decide how to proceed if you encounter errors while building.
