@@ -205,6 +205,12 @@ Alternatively, you can install the requested components to keep Visual Studio fr
 at the cost of additional disk space.
 ====
 
+[TIP]
+====
+Visual Studio may tell you "This solution contains packages with vulnerabilities" at the top of the Solution Explorer window.
+We must use these exact package versions to match what the game and engine are using, so they should not be updated.
+====
+
 Once Visual Studio loads,
 you should see a folder tree in the Solution Explorer containing entries for
 `Engine`, `Games`, `Programs`, and more.
