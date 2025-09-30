@@ -128,6 +128,11 @@ rename the plugin,
 or want extra configurability or custom settings,
 you can change the generated localization profile yourself.
 
+If your mod depends on localized content from other mods,
+select that mod's target(s) in the "Target Dependencies" to avoid it being gathered by both mods.
+
+image:L10n/ConfigureTargetDependencies.png[Configuring target dependencies]
+
 ## Gathering Text
 
 Next, Unreal's localization system must gather all of the text that needs to be translated.
