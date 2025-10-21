@@ -37,7 +37,16 @@ https://github.com/satisfactorymodding/SatisfactoryModLoader/issues/131[rare cra
 |disabledChatCommands
 |string array
 |[ ]
-|Allows you to disable certain chat commands by simply putting the command into the string array.
+|Allows you to disable specific chat commands by listing their fully qualified command names.
 In Multiplayer, if the host lists commands here, they will also be disabled for clients.
+
+For example, to exclude `/ExampleCommand` from the mod with Mod Reference `ExampleMod`,
+the setting value would look like this:
+
+```json
+"disabledChatCommands": [
+    "ExampleMod:ExampleCommand"
+],
+```
 
 |===
