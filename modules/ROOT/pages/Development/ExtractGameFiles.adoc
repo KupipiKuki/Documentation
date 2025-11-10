@@ -104,7 +104,7 @@ Press `OK` to save your changes.
 
 image:ExtractingGameFiles/FModelModelSettings.png[FModel Model Export Settings]
 
-[WARNING] 
+[WARNING]
 ====
 Any other changes made are at user discretion, and dependent on level of knowledge.
 ====
@@ -204,63 +204,83 @@ You may still find the `Events` folder useful for leaning the context of sound e
 For example, `/Events/World_Events_FilatovD/Environment/Caves/` presumably contains
 environmental sounds that would play while in caves.
 
+[id="bnk_single"]
+==== Extracting a Specific `.bnk`
+
 FModel's link:#_searching_for_files[Package Search functionality] is beneficial for finding specific sounds.
 Events that begin sound playback follow the naming scheme `Play_something.bnk`,
 so you can search for `Play something bnk` to find a list of valid sound bnk files containing `something`.
 
 Once you have found the bnk you want to extract
 (for example, `FactoryGame/Content/WwiseAudio/Event/19/Play_EQ_JetPack_Activate.bnk`)
-right click on it in FModel's "Packages" tab list and select `Export Raw Data (.uasset)`,
-which will export the bnk file despite the tooltip option claiming it will be a uasset.
+right click on it in FModel's "Packages" tab list and select `Export Raw Data`.
 
-Alternatively, you can extract the entire `Event` folder at once
-by right clicking on it in the "Folders" tab and selecting `Export Folder's Packages Raw Data (.uasset)`.
+Click on the text in the FModel log (ex. `Play_EQ_JetPack_Activate.bnk`) to open your system's file browser to the folder that contains the exported bnk.
 
-Click on the text
-(ex. `Play_EQ_JetPack_Activate.bnk`)
-in the FModel log to open your system's file browser to the folder that contains the exported bnk,
-or the top-level export folder if you exported the entire `Event` folder.
+[id="bnk_all"]
+==== Extracting All Sound `.bnk`{zero-width-join}s
+
+You can extract all bnk files from the `Event` folder
+by right clicking on it in the "Folders" tab and selecting `Export Folder's Packages Raw Data`.
+
+The directory folder structure will be preserved.
+Clicking the text in FModel's log will take you to your FModel Output folder.
 
 === Extracting sourceIDs with wwiser
+
+// cspell:ignore txtp
+SourceIDs are the unique numbers that associate a bnk file with the sound files it uses.
+The tool wwiser can extract metadata, in the form of a `.txtp` file, from a bnk file.
 
 You will need Python installed to utilize wwiser.
 Python 3.8.10 is known to work,
 and https://github.com/pyenv-win/pyenv-win[pyenv] is the suggested method of install.
 Installing python is out of the scope of this guide.
 
-Download the latest copy of wwiser from its https://github.com/bnnm/wwiser/releases[releases page].
 // cspell:ignore wwnames
-You'll want both the `wwiser.pyz` and `wwnames.db3` files from the release.
+1. Download the latest copy of wwiser from its https://github.com/bnnm/wwiser/releases[releases page].
+   You'll want both the `wwiser.pyz` and `wwnames.db3` files from the release.
+   If the release doesn't have a `wwnames.db3` file, grab one from a previous release.
+2. Use a zip extracting program of your choice to extract the files from `wwiser.pyz`
+   and place the `wwnames.db3` file in the same directory as the extracted files.
+3. Open the wwiser interface by running `python .\wwiser.py` in a terminal in that folder.
 
-Use a zip extracting program of your choice to extract the files from `wwiser.pyz`
-and place the `wwnames.db3` file in the same directory as the extracted files.
+[id="txtp_single"]
+==== Generating a Specific `.txtp`{zero-width-join}
 
-To open the wwiser interface, run `python .\wwiser.py` in a terminal in that folder.
-Next, select `Load banks...` and select the bnk file you extracted earlier.
-
-Check wwiser's log panel before continuing.
-If it contains the message `names: couldn't find .\wwnames.db3 name file`,
-go back to grab the `wwnames.db3` from the GitHub release and put it in the same folder as the bnk file you opened.
-
-// cspell:ignore txtp
-Next, select `Generate TXTP` which will create a folder in the same directory as the bnk file
-containing a txtp file for the event.
-// Need the + symbols to make sure Asciidoc doesn't see them as attributes 
-(ex. `+Play_EQ_JetPack_Activate {s} {m}.txtp+`)
-
-Open the txtp file in a text editor of your choice.
-If the bnk is linked to any sound files
-their sourceID numbers will be displayed at the top of the file
-(ex. `wem/633850317.wem` has the sourceID number `633850317`)
-along with additional audio information.
+1. In wwiser, click `Load banks...` and select the bnk file you extracted earlier.
+2. Check wwiser's log panel before continuing.
+   If it contains the message `names: couldn't find .\wwnames.db3 name file`,
+   go back to grab the `wwnames.db3` from the GitHub release and put it in the same folder as the bnk file you opened.
+3. Click `Generate TXTP` which will create a `txtp` subfolder in the same directory as the bnk file
+   containing a txtp file for the event
+// Need the + symbols to make sure Asciidoc doesn't see them as attributes
+   (ex. `+Play_EQ_JetPack_Activate {s} {m}.txtp+`).
+4. Open the txtp file in a text editor of your choice.
+   If the bnk is linked to any sound files
+   their _sourceID numbers_ will be displayed at the top of the file
+   (ex. `wem/633850317.wem` has the sourceID number `633850317`)
+   along with additional audio information.
 
 Sound events typically consistent of multiple sounds played at different volumes.
 Take note of all the sourceIDs of the event
 as you will likely need to review a few raw sounds to find the exact one you're looking for.
 
+[id="txtp_all"]
+==== Generating `.txtp`{zero-width-join}s for All Sounds
+
+If you extracted the entire Event folder earlier,
+use wwiser's `Load dirs...` button instead of `Load banks...` button.
+Select the `Event` folder in the FModel export hierarchy.
+
+The `txtp/` folder will be created inside the `Event` folder.
+
 === Extracting Sound Files
 
 Now that we have sourceIDs we can use FModel to locate and extract their corresponding sound files.
+
+[id="wem_single"]
+==== Extracting a Specific `.wem`
 
 First, locate the sound file in FModel via its sourceID, which will be its package file name.
 Using FModel's link:#_searching_for_files[Package Search functionality] is beneficial here.
@@ -287,20 +307,39 @@ https://discord.com/channels/555424930502541343/1036634533077979146/128694206712
 if that didn't work (mod developer discord role required to view).
 ====
 
+[id="wem_all"]
+==== Extracting All Sound `.wem`{zero-width-join}s
+
+You can also select the entire `Media` folder to extract all sound files to .`wem` files at once.
+Right click on it and select `Save Folder's Packages Audio`.
+
+Be aware though that this method will extract ALL sounds and can consume more than 5 GB of disk space.
+If you only need specific sounds, it's recommended to extract them individually.
+
+[id="BulkAudioRenamer"]
 === Bulk Audio Renamer
 
-Community member MrCheese has created a python script that enables mass renaming of exported wem files to their associated named bnk files.
+Community members MrCheese and Rovetown have created a python script that enables mass renaming of exported wem files to their associated named bnk files.
 If you decide to extract a large number of sounds, this script can save you a lot of time.
 
-To use it:
+1. Follow the directions in the headings above to obtain the required `.txtp` files from wwiser and `.wem` files from FModel.
+2. Create a folder somewhere named `SatisfactoryAudioRenamer`.
+3. link:{attachmentsdir}/Development/SatisfactoryAudioRenamer/convert.py[Download this python file (convert.py)]
+   and place it in the folder.
+4. Run the script once (`python .\convert.py`) to verify it can find your vgmstream-cli.exe and create the required subfolders.
+   Edit the script's definition for `VGMSTREAM` if required to point to your vgmstream-cli.exe location.
+5. Move all the txtp files that wwiser generated to the `SatisfactoryAudioRenamer/txtp` subfolder
+6. Place the extracted `.wem` files (including their parent `Media` folder if you decided to extract the full folder structure)
+   into the `SatisfactoryAudioRenamer/txtp/wem` folder.
+7. Run `python .\convert.py` from a terminal in the SatisfactoryAudioRenamer folder.
+8. You now have the renamed `.wav` files in the `out` subfolder (and in their original folder structure).
 
-1. Create a folder somewhere named `SatisfactoryAudioRenamer`.
-2. Create a subfolder named `out`
-3. Create a subfolder named `txtp`
-4. link:{attachmentsdir}/Development/SatisfactoryAudioRenamer/convert.py[Download this python file (convert.py)]
-   and place it in the SatisfactoryAudioRenamer folder
-5. Move all the txtp files that wwiser generated earlier to the txtp subfolder
-   and run `python .\convert.py` from a terminal in that SatisfactoryAudioRenamer folder.
+[NOTE]
+====
+The script will try and rerun if it encounters any errors.
+However, it may not always succeed in properly renaming all files.
+This can be due to several reasons, so if you encounter this, feel free to ask for help in the Discord.
+====
 
 == Generating a Complete Starter Project
 

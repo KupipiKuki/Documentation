@@ -8,6 +8,10 @@ asciidoc:
   # Custom text replacements. Built-in ones can be found here:
   # https://github.com/asciidoctor/asciidoctor/blob/917d3800a08a8f283a8d05beb08bb75af1673de5/lib/asciidoctor.rb#L391
   attributes:
+    # Increase max table of content nesting levels from 2 to 3 https://docs.antora.org/antora/latest/page/page-attributes/#access-attributes-from-ui-template
+    page-toclevels: 3@
+    # Zero-width joiner (U+200D) to avoid being split across lines
+    zero-width-join: ‍
     # Uses zero-width joiner (U+200D) to avoid being split across lines
     cpp: C‍+‍+
     # Use backslash without it escaping things in other situations
