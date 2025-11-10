@@ -1,12 +1,16 @@
+# pylint: disable=logging-fstring-interpolation, global-statement, missing-function-docstring, missing-module-docstring, broad-exception-caught
 import os
 import subprocess
 from pathlib import Path
 import shutil
 import logging
+import sys
 
 # Full path to vgmstream-cli.exe, usually in your FModel's Output Directory
 # Example Path
 VGMSTREAM = Path(r"C:/FModel/Output/.data/vgmstream-cli.exe")
+
+# ==================================================================================================
 
 # Logs
 MAIN_LOG = "conversion_main.log"
@@ -17,14 +21,29 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler(MAIN_LOG, mode='w', encoding='utf-8'),
-        logging.StreamHandler()
-    ]
+        logging.FileHandler(MAIN_LOG, mode="w", encoding="utf-8"),
+        logging.StreamHandler(),
+    ],
 )
+
+
+# Set up subfolders
+currentDirectory = Path(os.path.dirname(os.path.abspath(__file__)))
+(currentDirectory / "out").mkdir(exist_ok=True)
+(currentDirectory / "txtp" / "wem").mkdir(parents=True, exist_ok=True)
+
+# Check if vgmstream exists
+if not VGMSTREAM.exists():
+    logging.critical(
+        f"vgmstream-cli.exe not found at {VGMSTREAM}. It should have been downloaded by FModel. Edit the script if necessary to change the path."
+    )
+    sys.exit(1)
+else:
+    logging.info(f"Using vgmstream-cli.exe at {VGMSTREAM}")
 
 # Setup failed conversion logging (Will overwrite each run, could be replaced with RotatingFileHandler but needs script changes)
 failed_logger = logging.getLogger("failed")
-failed_handler = logging.FileHandler(FAILED_LOG, mode='w', encoding='utf-8')
+failed_handler = logging.FileHandler(FAILED_LOG, mode="w", encoding="utf-8")
 failed_handler.setLevel(logging.ERROR)
 failed_logger.addHandler(failed_handler)
 failed_logger.propagate = False
@@ -35,9 +54,10 @@ converted_count = 0
 skipped_count = 0
 failed_count = 0
 
+
 # Step 1: Convert all .wem files into ./out_temp/wem/ (flat), mapping to digit folders
 def wem_to_wav(input_root, temp_root):
-    global total_wems, converted_count, skipped_count, failed_count
+    global converted_count, skipped_count, failed_count
     input_root = Path(input_root)
     temp_wem_root = Path(temp_root) / "wem"
 
@@ -46,7 +66,7 @@ def wem_to_wav(input_root, temp_root):
         shutil.rmtree(temp_wem_root)
     temp_wem_root.mkdir(parents=True, exist_ok=True)
 
-    mapping = {}  # wav filename -> digit folder
+    wav_filename_to_digit_folder = {}
 
     for folder, _, files in os.walk(input_root):
         folder_path = Path(folder)
@@ -61,7 +81,7 @@ def wem_to_wav(input_root, temp_root):
 
             wem_path = folder_path / file
             wav_path = temp_wem_root / wav_name
-            mapping[wav_name] = digit_folder
+            wav_filename_to_digit_folder[wav_name] = digit_folder
 
             final_out_path = Path("out") / digit_folder / wav_name
             if wav_path.exists() or final_out_path.exists():
@@ -75,7 +95,8 @@ def wem_to_wav(input_root, temp_root):
                 result = subprocess.run(
                     [str(VGMSTREAM), "-o", str(wav_path), str(wem_path)],
                     capture_output=True,
-                    text=True
+                    text=True,
+                    check=True,
                 )
                 if result.returncode != 0 or not wav_path.exists():
                     failed_count += 1
@@ -90,12 +111,15 @@ def wem_to_wav(input_root, temp_root):
                 try:
                     shutil.copy2(wem_path, wav_path)
                     skipped_count += 1
-                    logging.info(f"Using existing WAV instead of converting: {wem_path} → {wav_path}")
+                    logging.info(
+                        f"Using existing WAV instead of converting: {wem_path} → {wav_path}"
+                    )
                 except Exception as e:
                     failed_count += 1
                     logging.error(f"Failed to copy existing WAV {wem_path}: {e}")
                     failed_logger.error(str(wem_path))
-    return mapping
+    return wav_filename_to_digit_folder
+
 
 # Step 2: Rename .wav files based on .txtp references
 def convert(filename, wav_root, out_root, mapping):
@@ -104,16 +128,16 @@ def convert(filename, wav_root, out_root, mapping):
     txtp_path = Path("txtp") / filename
 
     try:
-        with open(txtp_path, "r", encoding='utf-8') as my_file:
+        with open(txtp_path, "r", encoding="utf-8") as my_file:
             data = my_file.read()
     except Exception as e:
         logging.error(f"Failed to read {txtp_path}: {e}")
         return
 
-    tokens = data.replace('\n', ' ').split(" ")
+    tokens = data.replace("\n", " ").split(" ")
 
     for i, token in enumerate(tokens):
-        if token.startswith('wem'):
+        if token.startswith("wem"):
             wav_file_only = Path(token).stem + ".wav"
             wavname = wav_root / wav_file_only
             digit_folder = mapping.get(wavname.name, "unknown")
@@ -133,6 +157,7 @@ def convert(filename, wav_root, out_root, mapping):
                     logging.error(f"Failed to rename {wavname}: {e}")
             else:
                 logging.warning(f"{wavname} not found.")
+
 
 # Step 3: Retry failed conversions
 def retry_failed_conversions(temp_wav_root):
@@ -165,7 +190,8 @@ def retry_failed_conversions(temp_wav_root):
         result = subprocess.run(
             [str(VGMSTREAM), "-o", str(wav_path), str(wem_path)],
             capture_output=True,
-            text=True
+            text=True,
+            check=True,
         )
         if result.returncode != 0 or not wav_path.exists():
             new_failures += 1
@@ -182,6 +208,7 @@ def retry_failed_conversions(temp_wav_root):
 
     # Update failed_count to reflect files that truly failed after retry
     failed_count = new_failures
+
 
 # Main driver
 if __name__ == "__main__":
