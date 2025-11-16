@@ -37,7 +37,7 @@ exclude = [
     "https://docs.unrealengine.com/",
     "https://dev.epicgames.com/",
     "^https://www.unrealengine.com/en-US/blog/.*",
-    "^https://epicgames.com/help/.*",
+    "^https://www.epicgames.com/help/.*",
     # Times out despite being valid
     "https://www.adobe.com/learn/substance-3d-designer/web/the-pbr-guide-part-1",
     # Pages often time out and Shouldn't™ ever get deleted anyways
