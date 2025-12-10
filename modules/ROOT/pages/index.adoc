@@ -7,7 +7,6 @@ Welcome to the Satisfactory Modding Documentation site!
 Here you can find lots of information regarding modding
 https://www.satisfactorygame.com/[Satisfactory],
 the factory-building sim by https://www.coffeestainstudios.com/games/[Coffee Stain Studios] (CSS).
-Modding for Satisfactory is more established than you might think given how long the game has been out.
 There are already https://ficsit.app/[over 1200 mods] released
 and we maintain in-depth documentation on how you can create your own.
 
@@ -29,7 +28,7 @@ If this is your first time modding Satisfactory,
 check out the xref:ForUsers/Welcome.adoc[Welcome to the Community] guide to get started with mods quickly.
 
 ====
-xref:ForUsers/SatisfactoryModManager.adoc[View the "Welcome to the Community" guide ➡]
+xref:ForUsers/Welcome.adoc[View the "Welcome to the Community" guide ➡]
 ====
 
 === Satisfactory Mod Repository
@@ -48,8 +47,8 @@ It connects to https://ficsit.app/[SMR], allowing for quick and easy installatio
 xref:ForUsers/SatisfactoryModManager.adoc[Learn how to install and use the mod manager on the "Using the Mod Manager" page  ➡]
 ====
 
-We highly recommend using Satisfactory Mod Manager to install mods as it makes using mods that much easier.
-However, if you _really_ don't want to use the launcher,
+We highly recommend using Satisfactory Mod Manager as it makes using mods that much easier.
+However, if you _really_ don't want to use it,
 directions for manual installation can be found xref:ManualInstallDirections.adoc[here].
 
 == For Developers
@@ -72,15 +71,15 @@ xref:Development/BeginnersGuide/index.adoc[Get started developing Unreal Bluepri
 ====
 
 ====
-link:https://docs.ficsit.app/contentlib/latest/index.html[Get started developing basic mods with JSON text files and ContentLib ➡]
+link:https://docs.ficsit.app/contentlib/latest/index.html[Get started developing mods with JSON text files and ContentLib ➡]
 ====
 
-If you're looking to make models, it's best to learn how to put a mod together first.
+If you're looking to make 3D models for the game, it's best to learn how to put a mod together first.
 Once you've completed the "Buildable" page in the Getting Started guide, check out our xref:Development/Modeling/index.adoc[Modeling Guide].
 
 === Uploading Your Mod to SMR
 
-After you've finished your mod (or at least its first version), you might want to upload it to https://ficsit.app/[SMR]. Read the dedicated docs page to know more on how to do that xref:UploadToSMR.adoc[here]!
+After you've finished your mod (or at least its first version), you might want to upload it to https://ficsit.app/[SMR]. To do that, follow the steps xref:UploadToSMR.adoc[here]!
 
 == Archived Forums
 
