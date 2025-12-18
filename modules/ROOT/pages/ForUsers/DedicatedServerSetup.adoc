@@ -65,7 +65,8 @@ const unshuffled = [
   "Nitrado",
   "GTX Gaming",
   "Nodecraft",
-  "Gravel Host"
+  "Gravel Host",
+  "Nitroserv"
 ];
 const shuffled = unshuffled
   .map(value => ({ value, sort: Math.random() }))
@@ -81,12 +82,11 @@ list.innerHTML = shuffled.map(host => `<li>${host}</li>`).join('');
 [id="UnsupportedHosting"]
 ==== Unsupported Hosts
 
+// cspell:ignore gportal
 ====
 The following 3rd party hosting services are known to **_NOT_ support mods**,
 regardless of what their websites and marketing pages claim:
 
-// cspell:ignore nitroserv gportal
-- nitroserv.games - Allows creating but not deleting dot files, which bricks the server
 - 4netplayers - Doesn't show the root executable, as well as other game files
 - dawnserver.de - Provider does not allow mods
 ====
