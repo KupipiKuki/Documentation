@@ -179,7 +179,7 @@ It's imperative that you download the correct engine for the version of the game
 or you will have to repeat a large amount of the setup process again.
 
 ====
-include::/_includes/current-branch-header.adoc[]
+include::./_includes/current-branch-header.adoc[]
 
 Download this engine version: +
 https://github.com/satisfactorymodding/UnrealEngine/releases/{engine-version}

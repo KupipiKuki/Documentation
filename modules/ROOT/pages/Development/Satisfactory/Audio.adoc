@@ -229,20 +229,8 @@ Do so by following the steps in the link:#_generating_sound_banks[respective sec
 
 === Unreal Project Configuration
 
-// Make sure this content stays in sync with project_setup.adoc#FirstTimeUserPopups
-
-Open the Unreal Engine project settings (`Edit` > `Project Settings...`)
-and navigate to the "Wwise" category's page `Integration Settings`.
-
-In the "Installation" subsection,
-change the `Root Output Path` setting to `<WwiseProjectPath>/GeneratedSoundBanks`.
-Note that it may be pre-filled with an incorrect Wwise project path,
-so use the directory picker to ensure you've selected your actual Wwise project.
-
-Next, head to the "Initialization" subsection
-and change the `Unreal Audio Routing` setting to `Both Wwise and Unreal audio`.
-
-// End stays in sync
+Open
+include::./../_includes/ue-editor-set-wwise-generated-soundbanks.adoc[]
 
 You may need to restart the Unreal Editor after making these changes.
 
