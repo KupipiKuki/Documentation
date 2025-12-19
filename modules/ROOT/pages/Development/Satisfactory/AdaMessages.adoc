@@ -110,6 +110,7 @@ however, some similar alternatives are known:
 - The https://ttsfree.com/text-to-speech/[TTSFree website] allows generating audio using `en-US-Standard-C` voicebank,
   which is similar but has clearly audible differences.
 - https://actions-on-google-labs.github.io/nightingale-ssml-editor/[Nightingale Text to Speech Demo] claims to allows generating audio using `en-US-Wavenet-C`, but it seems to be using `en-US-Standard-C` instead.
+- You can set up a paid Google Cloud account and use its APIs to generate Wavenet C audio
 
 You may need to change the text of what the TTS is saying to not match what the captions are when saying certain words.
 // cspell:ignore fixit
