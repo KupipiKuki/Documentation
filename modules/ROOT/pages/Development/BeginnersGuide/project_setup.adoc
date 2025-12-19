@@ -430,6 +430,8 @@ We suggest the following resources:
 
 include::./../_includes/editor-familiarize-list.adoc[]
 
+You can find more on the xref:Development/UnrealEngine/UnrealLearningResources.adoc[Unreal Learning Resources page].
+
 == (Optional) Modify Editor Color Scheme
 
 The Unreal Engine 5 editor is very dark by default.

@@ -70,6 +70,7 @@ We can not understate the value of learning through doing. Especially if just st
 
 The following resources may be helpful for you in the creation of your {cpp} mods:
 
+* External resources linked on the xref:Development/UnrealEngine/UnrealLearningResources.adoc[Unreal Learning Resources page]
 * CSS has been kind enough to provide us with the Satisfactory {cpp} headers.
   They are already included in the Starter Project,
   but are originally pulled from the `CommunityResources` folder of your install.
