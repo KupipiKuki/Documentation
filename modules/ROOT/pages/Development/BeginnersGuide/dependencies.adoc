@@ -39,33 +39,41 @@ Launch the game at least once to ensure all files get set up correctly.
 == Visual Studio
 
 Visit the https://visualstudio.microsoft.com/downloads/[Microsoft Visual Studio downloads page]
-and select the button for Visual Studio 2022 Community, which is free of charge.
+and select the button for Visual Studio 2026 Community, which is free of charge.
 
-If you already have Visual Studio installed,
-you'll need to run installer again and follow the steps below to modify your existing installation.
+image::BeginnersGuide/VSCommunityDownload.jpg[Visual Studio Community Download, title=Visual Studio Community Download]
 
-After the installer has downloaded, run it and agree to any authorization prompts you receive along the way.
-Once you are prompted to install Visual Studio 2022
-you have two options for selecting the relevant components.
+If you already have Visual Studio installed, you’ll need to run installer again and follow the steps below to modify your existing installation.
+
+After the installer has downloaded, decide whether you would prefer to install using the config file provided, or if you would rather install the required packages manually.
 
 [id="ImportConfiguration"]
-=== Option 1: Import an Installer Configuration
 
-If the installer took you directly to the Workflow or Component selection screen
-you'll have to use the smaller X button in the top right to close out of that prompt first.
-
-Instead of clicking "Install" next to Visual Studio 2022,
-click the 'More' dropdown and select `Import Configuration`.
-If the option does not appear, make sure that your existing installation is not "pending"
-by allowing it to finish installing.
+Download the configuration file below if performing the import method, place this in the directory of the Visual Studio Community installer.
 
 // cspell:ignore vsconfig
 Download link:{attachmentsdir}/BeginnersGuide/dependencies/SML.vsconfig[this configuration file]
-and select it in the installer's prompt.
-Next, press `Review details` and continue with the installation.
+
+=== Option 1: Install Visual Studio 2022 with the Configuration File
+
+Visual Studio 2022 can be installed along with the config file using windows command prompt and the instruction below.
+
+- `vs_community.exe --channelUri https://aka.ms/vs/17/release/channel --config SML.vsconfig`
+
+image::BeginnersGuide/VSCommunityInstallPrompt.jpg[Visual Studio Community 2022 Install, title=Visual Studio Community 2022 Command Prompt Install]
+
+The installer will begin downloading and preparing the installation packages, agree to any authorization prompts you receive along the way, the resulting splash screen should look similar to below.
+
+image::BeginnersGuide/VSCommunityInstallSplash.jpg[Visual Studio Community 2022 Install Splash Screen, title=Visual Studio Community 2022 Install Splash Screen]
 
 [id="ManuallySelectComponents"]
 === Option 2: Manually Select Components
+
+Visual Studio 2022 can be installed using windows command prompt and the instruction below.
+
+- `vs_community.exe --channelUri https://aka.ms/vs/17/release/channel`
+
+image::BeginnersGuide/VSCommunityInstallPromptNoConfig.jpg[Visual Studio Community 2022 Install No Config, title=Visual Studio Community 2022 Command Prompt Install No Config]
 
 From the "Workloads" tab, select:
 
